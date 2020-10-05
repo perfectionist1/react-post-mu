@@ -6,8 +6,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Home from './Home/Home';
-import NoMatch from './NoMatch/NoMatch';
+import Home from './components/Home/Home';
+import NoMatch from './components/NoMatch/NoMatch';
+import SinglePost from './components/SinglePost/SinglePost';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/:postId">
+            <SinglePost />
           </Route>
           <Route path="*">
             <NoMatch />
