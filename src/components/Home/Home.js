@@ -1,5 +1,6 @@
 import { Container, Box } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
+import Header from '../Header/Header';
 import Posts from '../Posts/Posts';
 
 const Home = () => {
@@ -11,16 +12,20 @@ const Home = () => {
         .then( data => setPosts(data))
     }, []);
     return (
-        <Container maxWidth="md">
-            <Box textAlign="center">
-                <h2 ml={4}>All Post: {posts.length}</h2>
-            </Box>
-            <div>                
-                {
-                    posts.map( pst => <Posts post={pst}></Posts> )
-                }
-            </div>
-        </Container>
+        <div>
+            <Header></Header>
+            <Container maxWidth="md">
+                <Box textAlign="center">
+                    <h2 ml={4}>All Post: {posts.length}</h2>
+                </Box>
+                <div>                
+                    {
+                        posts.map( pst => <Posts post={pst}></Posts> )
+                    }
+                </div>
+            </Container>
+        </div>
+        
   
     );
 };

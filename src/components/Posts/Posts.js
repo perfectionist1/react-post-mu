@@ -5,21 +5,27 @@ import { Box, Container } from '@material-ui/core';
 import { spacing } from '@material-ui/system';
 import './Posts.css';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 const Posts = (props) => {
-    console.log(props);
+    //console.log(props);
     const {id, title} = props.post;
+    const history = useHistory();
+    const clickHandle = (singleId) => {
+        history.push(`/${singleId}`);
+    }
+
     return (
         <Container maxWidth="md">            
                 <div className="posts-style">
                     <Box m={1} pr={3} pl={3}>                      
-                        <h2><Link to={`/${id}`}> Post ID: {id} </Link> </h2>
+                        <h2><Link to={`/${id}`}> Post ID: {id} <small style={{fontSize:'12px'}}>(click me)</small> </Link> </h2>
                         
-                        <p>Post Title: {title}</p>  
+                        <p><strong>Post Title: </strong>{title}</p>  
                         <hr />
                         <Box pt={5}> 
-                            <Button variant="contained" color="primary">
+                            <Button onClick={ () => clickHandle(id)} variant="contained" color="primary">
                                 Click Here
                             </Button> To read in details
                         </Box>

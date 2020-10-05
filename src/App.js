@@ -9,6 +9,7 @@ import {
 import Home from './components/Home/Home';
 import NoMatch from './components/NoMatch/NoMatch';
 import SinglePost from './components/SinglePost/SinglePost';
+import Header from './components/Header/Header';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/:postId">
+            <Header />
             <SinglePost />
           </Route>
           <Route path="*">

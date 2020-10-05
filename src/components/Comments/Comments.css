@@ -1,0 +1,14 @@
+.image-name{
+    display: flex;
+}
+.image-part{
+    width: 25%;
+}
+.image-part img{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%
+}
+.name-part{
+    width: 65%
+}
